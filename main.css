@@ -1,11 +1,15 @@
+/* Default Dark Mode Styles */
 body {
-  background-color: #3b3838;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 #createBtnContainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 0;
+  width: 100%;
 }
 
 form {
@@ -22,8 +26,100 @@ iframe {
   height: 500px;
 }
 
-/* MEDIA QUERY FOR SMALL SCREENS  */
-/* https://www.w3schools.com/cssref/css3_pr_mediaquery.asp  */
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .btn {
+  border-color: #e0e0e0;
+}
+
+.dark-mode .btn-light {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+.dark-mode .modal-content {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+/* Dark Mode Styles */
+.dark-mode .video-title,
+.dark-mode .video-category {
+  color: #000000; 
+}
+
+
+.dark-mode .form-control,
+.dark-mode .form-select,
+.dark-mode .form-check-input {
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+/* Light Mode Styles */
+body:not(.dark-mode) {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+body:not(.dark-mode) .btn {
+  border-color: #333;
+}
+
+body:not(.dark-mode) .btn-light {
+  background-color: #e0e0e0;
+  color: #333;
+  border-color: #ccc;
+}
+
+body:not(.dark-mode) .modal-content {
+  background-color: #ffffff;
+  color: #333;
+}
+
+body:not(.dark-mode) .form-control,
+body:not(.dark-mode) .form-select,
+body:not(.dark-mode) .form-check-input {
+  background-color: #ffffff;
+  color: #333;
+  border-color: #ccc;
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast.hide {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* Responsive Design for Mobile */
 @media only screen and (max-width: 600px) {
   .buttonRow {
     min-width: 100%;
